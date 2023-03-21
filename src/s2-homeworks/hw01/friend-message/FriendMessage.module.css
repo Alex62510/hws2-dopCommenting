@@ -1,9 +1,10 @@
 .friendMessage {
-    position: absolute;
+    display: flex;
 }
 
 .friendImageAndText {
-    position: absolute;
+    display: flex;
+
     width: 214px;
     height: 100px;
     left: 1000px;
