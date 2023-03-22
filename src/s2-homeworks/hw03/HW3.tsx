@@ -24,17 +24,13 @@ export type UserType = {
 }
 
 export const pureAddUserCallback = (name: string, setUsers: ([])=>void, users: Array<UserType>) => { // need to fix any
-    const user = {_id: v1(), name: name}
-        // need to fix
-        // нужно создать новый объект соответствующий типу UserType
-        // не забыть   сгенеририовать _id и вставить пришедший в функцию name
+    const user = {_id: v1(), name: name} // need to fix
     setUsers([...users, user])
-    //засетайЮзеров([...старые users, и наш новый user])
 }
 
 const HW3 = () => {
     const [users, setUsers] = useState<Array<UserType>>([]) // need to fix any
-
+console.log(users)
     const addUserCallback = (name: string) => { // need to fix any
         pureAddUserCallback(name, setUsers, users)
     }

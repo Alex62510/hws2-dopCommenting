@@ -6,7 +6,9 @@
 
 .inputAndButtonContainer {
     display: flex;
-    flex-direction: row;
+    align-items: flex-start;
+    align-items: baseline;
+
 }
 
 .error {
@@ -37,9 +39,9 @@
 
 .button {
     display: flex;
-    margin: 30px;
+    margin: 20px;
     width: 30px;
-    border-radius: 50%;
+    border-radius: 40%;
     background: darkblue;
     color: #00ccad;
     outline: none;
