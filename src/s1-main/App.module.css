@@ -6,7 +6,7 @@
 .hw {
   display: flex;
 flex-direction: column;
-    align-content: space-between;
+    align-content: normal  ;
     align-items: stretch;
     justify-content: center;
 

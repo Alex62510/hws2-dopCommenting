@@ -1,4 +1,9 @@
 .button {
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+    cursor: pointer;
+
 }
 
 .disabled {
@@ -8,9 +13,13 @@
 }
 
 .default {
+    background: darkblue;
+    color: #00cc22;
+    outline: none;
 }
 
 .red {
+    background: #cc0000;
 }
 
 .default:hover {
@@ -33,4 +42,6 @@
 }
 
 .button:disabled {
+    color: darkblue;
+    cursor: auto;
 }
