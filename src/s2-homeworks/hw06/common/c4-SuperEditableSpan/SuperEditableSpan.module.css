@@ -1,7 +1,13 @@
 .spanBlock {
+    display: inline-block;
+    height: 30px;
+    padding-top: 10px;
+    cursor: pointer;
+    color: #cc0000;
 }
 
 .span {
+    color: blue;
 }
 
 .input {
