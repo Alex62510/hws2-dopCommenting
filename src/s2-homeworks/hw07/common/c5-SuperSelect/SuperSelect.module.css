@@ -1,9 +1,23 @@
 .select {
+    width: 100px;
+    padding: 10px;
+    padding-right: 50px;
+
+    cursor: pointer;
+
+background-color: #0b3044;
+    border: 2px inset rgb(118 118 118);
+    color: #00cc22;
 }
 
 .select:focus {
+    outline: none;
+    border: #00cc22 solid 2px;
 }
 
 
 .option:hover {
+    box-shadow: 0 0 10px 100px  yellow inset;
+    transition: all .2s ease-in-out;
+    background: #cc0000;
 }

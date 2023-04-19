@@ -1,14 +1,23 @@
 .radio {
+    width: 10px;
+    height: 10px;
+
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #1787c4;
 }
 
 .radio::before {
+    background-color: #44320b;
 }
 
 
 .radio:checked::before {
+    background: #5ccc00;
 }
 
 .label {
+    cursor: pointer;
 }
 
 .options {
