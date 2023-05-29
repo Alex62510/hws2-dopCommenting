@@ -5,12 +5,12 @@
 
 [data-theme='2'] {
     --color: #000000;
-    --background: #DDEEFF;
+    --background: #2f39ff;
 }
 
 [data-theme='3'] {
     --color: #FFFFFF;
-    --background: #212A34;
+    --background: #0a0b0c;
 }
 
 html {
