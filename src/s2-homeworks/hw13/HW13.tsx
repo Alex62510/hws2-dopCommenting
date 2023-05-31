@@ -21,7 +21,6 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
-
     const send = (x?: boolean | null) => () => {
         const url =
             x === null
