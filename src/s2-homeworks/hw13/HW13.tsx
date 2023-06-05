@@ -35,20 +35,22 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
+                console.log(res)
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-                setText('Upload success')
-                setInfo('...Uploaded')
+                setText(res.data.errorText)
+                setInfo(res.data.info)
 
             })
             .catch((e) => {
+                console.log(e)
                 // дописать
-                setCode('Код 400!')
-                setImage(error400)
+                setCode( e.response.status ?` Ошибка ${e.response.status}!` : 'Error!')
+                setImage(e.response.status===500 ? error500 : e.response.status===400 ? error400 : errorUnknown)
                 // дописать
-                setText('Upload wrong')
-                setInfo('...Error')
+                setText(e.response.status ? `${e.response.data.errorText}!`: e.message )
+                setInfo(e.response.status ? `${e.response.data.info}!` : e.name)
 
             })
     }
