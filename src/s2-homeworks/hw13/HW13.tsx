@@ -48,9 +48,8 @@ const HW13 = () => {
                 // дописать
                 setCode( e.response.status ?` Ошибка ${e.response.status}!` : 'Error!')
                 setImage(e.response.status===500 ? error500 : e.response.status===400 ? error400 : errorUnknown)
-                // дописать
-                setText(e.response.status ? `${e.response.data.errorText}!`: e.message )
-                setInfo(e.response.status ? `${e.response.data.info}!` : e.name)
+                setText(e.response.status ? e.response.data.errorText: e.message )
+                setInfo(e.response.status ? e.response.data.info : e.name)
 
             })
     }
