@@ -1,23 +1,19 @@
-[data-theme='1'] {
-    --color: #000000;
-    --background: #FFFFFF;
-}
-
-[data-theme='2'] {
-    --color: #000000;
-    --background: #2f39ff;
-}
-
-[data-theme='3'] {
-    --color: #FFFFFF;
-    --background: #0a0b0c;
-}
+@import url("./../../variables.css");
 
 html {
     background-color: var(--background);
-    color: var(--color);
+    color: var(--color-text);
 }
 
 .select {
-
+    color: var(--color-text);
+    background-color: var(--background);
+}
+.titleName {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 6px;
+    color: var(--color-text)
 }

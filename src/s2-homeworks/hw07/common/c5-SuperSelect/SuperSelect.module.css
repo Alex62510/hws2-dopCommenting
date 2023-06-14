@@ -1,23 +1,84 @@
 .select {
-    width: 100px;
-    padding: 10px;
-    padding-right: 50px;
-
+    /*width: 180px;*/
+    height: 35px;
+    padding: 4px 6px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: var(--background);
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 24px 24px;
+    background-image: url("chevron-down.svg");
+    border-radius: 2px;
+    border: 1px solid #C2C2C2;
     cursor: pointer;
+    position: relative;
+}
 
-background-color: #0b3044;
-    border: 2px inset rgb(118 118 118);
-    color: #00cc22;
+
+.active {
+    width: 180px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .select:focus {
     outline: none;
-    border: #00cc22 solid 2px;
 }
 
-
+.option {
+    width: 180px;
+    height: 35px;
+    background-color: var(--background);
+    color: var(--color-text);
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #C2C2C2;
+    border-right: 1px solid #C2C2C2;
+    border-left: 1px solid #C2C2C2;
+    transition: all .3s ease;
+}
+.option:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
 .option:hover {
-    box-shadow: 0 0 10px 100px  yellow inset;
-    transition: all .2s ease-in-out;
-    background: #cc0000;
+    color: #0066CC;
+    cursor: pointer;
+}
+.activeOption {
+    border: none;
+    background-color: #0066CC;
+    color: var(--color-text);
+}
+.activeOption:hover {
+    color: var(--color-text);
+    background-color: #0066CC;
+}
+
+/*.selectWrapper {*/
+/*    position: relative;*/
+/*}*/
+.selectedOption {
+    position: absolute;
+    white-space: nowrap;
+    top: 9px;
+    left: 10px;
+    color: var(--color-text);
+    background-color: var(--background);
+}
+
+.select img {
+    fill: var(--color-text)
+}
+
+.items {
+    position: absolute;
+    top: 34px;
+    left: -1px;
 }

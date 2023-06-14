@@ -1,20 +1,23 @@
 import React from 'react'
 import s from './FriendMessage.module.css'
-import {MessagePropsType} from "../message/Message";
+import {MessagePropsType} from "../HW1"
+
+export type MessageType = {
+    message: MessagePropsType
+}
 
 // создать тип вместо any и отобразить приходящие данные
-// ВСЕ ТОЖЕ САМОЕ, ЧТО И В КОМПОНЕНТЕ Message -ПОЭТОМУ ПОДСКАЗОК МЕНЬШЕ
-const FriendMessage = (props: MessagePropsType) => {
+const FriendMessage = (props: MessageType) => {
     return (
         <div
-            id={'hw1-friend-message-' + props.message.id}
+            id={'hw1-friend-Messages-' + props.message.id}
             className={s.friendMessage}
         >
             <div className={s.friendImageAndText}>
-                <img src={props.message.user.avatar}
+                <img
                     id={'hw1-friend-avatar-' + props.message.id}
                     // создаёт студент
-
+                    src={props.message.user.avatar}
                     //
                 />
                 <div className={s.friendText}>

@@ -1,24 +1,64 @@
 .radio {
-    width: 10px;
-    height: 10px;
-
-    cursor: pointer;
+    position: relative;
+    left: 0;
+    top: 0;
+    content: "";
+    border: 2px solid var(--color-text);
+    width: 23px;
+    height: 23px;
     border-radius: 50%;
-    background-color: #1787c4;
+    cursor: pointer;
+    appearance: none;
 }
 
 .radio::before {
-    background-color: #44320b;
 }
 
 
 .radio:checked::before {
-    background: #5ccc00;
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    background-color: var(--color-text);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
 }
 
 .label {
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+}
+
+.span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    color: var(--color-text);
 }
+
+[data-theme='1'] {
+    --color-text: #000000;
+    --background: #FFFFFF;
+}
+
+[data-theme='2'] {
+    --color-text: #000000;
+    --background: #DDEEFF;
+}
+
+[data-theme='3'] {
+    --color-text: #FFFFFF;
+    --background: #212A34;
+}
+

@@ -1,32 +1,38 @@
+@import url("./../variables.css");
+
 .App {
     --header_height: 60px;
-    text-align: left;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
 }
 
-.hw {
-  display: flex;
-flex-direction: column;
-    align-content: normal  ;
-    align-items: stretch;
-    justify-content: center;
-
-    color: #000000;
+.container {
+    margin: 0 auto;
+    width: 1140px;
 }
 
 .hwTitle {
-display: flex;
-    width: 169px;
-    height: 27px;
-    left: 10px;
-    top: 0px;
-
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
     line-height: 27px;
-    /* identical to box height */
-
-    color: #000000;
+    margin-bottom: 9px;
+    margin-top: 39px;
+    color: var(--color-text)
 }
 
+.hw {
+    padding-top: 24px;
+    padding-bottom: 31px;
+    min-height: 336px;
+}
+
+hr {
+    height: 1px;
+    color: #D9D9D9;
+}

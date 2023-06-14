@@ -1,20 +1,22 @@
 import React from 'react'
 import s from './Message.module.css'
-import {MessageType} from "../HW1";
+import {MessagePropsType} from "../HW1"
 
 // нужно создать правильный тип вместо any
-export type MessagePropsType = {
-    message:MessageType
+export type MessageType = {
+    message: MessagePropsType
 }
 
 // нужно отобразить приходящие данные
-const Message = (props: MessagePropsType) => {
+const Message = (props: MessageType) => {
     return (
-        <div id={'hw1-message-' + props.message.id} className={s.message}>
+        <div id={'hw1-Messages-' + props.message.id} className={s.message}>
             <div className={s.imageAndText}>
-                {/*создаёт студент*/}
-                <img src={props.message.user.avatar}
+                <img
                     id={'hw1-avatar-' + props.message.id}
+                    // создаёт студент
+                    src={props.message.user.avatar}
+                    //
                 />
                 <div className={s.text}>
                     <div id={'hw1-name-' + props.message.id} className={s.name}>
@@ -38,4 +40,4 @@ const Message = (props: MessagePropsType) => {
     )
 }
 
-export default Message;
+export default Message

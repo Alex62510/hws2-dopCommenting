@@ -1,71 +1,88 @@
 .greetingForm {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 .inputAndButtonContainer {
     display: flex;
-    align-items: flex-start;
-    align-items: baseline;
-
+    gap: 12px;
+    margin-bottom: 7px;
 }
 
 .error {
-    color: #cc0000;
-    height: 20px;
-    margin-left: 15px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CC0000;
+    margin-top: 7px;
 }
 
 .input {
-    margin: 10px;
-    padding: 10px;
-    background: darkblue;
-    color: #00ccad;
+    width: 372px;
+    height: 36px;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    padding: 8px 12px;
 }
 
 .input:focus {
-    outline: none;
-    border: #00ccad solid 2px;
+    color: #000000;
 }
 
 .errorInput {
-    margin: 10px;
-    background: darkblue;
-    color: #00ccad;
-    border: 2px solid red;
-    outline: none;
+    width: 372px;
+    height: 36px;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    border: 1px solid #CC0000;
+    padding: 8px 12px;
 }
 
 .button {
     display: flex;
-    margin: 20px;
-    width: 30px;
-    border-radius: 40%;
-    background: darkblue;
-    color: #00ccad;
-    outline: none;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px;
+    border-radius: 3px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background-color: #0066CC;
+    cursor: pointer;
+    border: none;
+    transition: all .2s ease;
+    opacity: 1;
 }
 
 .button:focus {
-    outline: #00ccad;
+    background-color: #0059B3;
 }
 
 .button:active {
-    background: #00ccad;
-}
-
-.button:disabled {
-    color: #0080ff;
+    background-color: #0059B3;
 }
 
 .text {
-    color: #00cc22;
-    width: 200px;
-    margin: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 9px;
+    color: var(--color-text);
 }
+
 .greeting {
-    color: #00cc22;
-    width: 50px;
-    margin: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--color-text);
 }

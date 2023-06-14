@@ -1,32 +1,32 @@
 .input:focus {
-    outline: none;
-    border: #00cc22 solid 2px;
 }
 
 .input {
+    width: 372px;
+    height: 36px;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    padding: 8px 12px;
 }
 
 .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
 }
 
 .superInput {
-    margin: 10px;
-    background: darkblue;
-    color: #00cc22;
+    border: 1px solid #D1D1D1;
 }
 
 .errorInput {
-    margin: 10px;
-    background: darkblue;
-    color: #00cc22;
-    border: #cc0000 solid 2px;
+    border: 1px solid #CC0000;
 }
 
 .errorInput:focus {
 }
 
-.error {
-    color: #cc0000;
-height: 20px;
-    margin-left: 10px;
-}

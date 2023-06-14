@@ -1,7 +1,7 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {AppStoreType} from './bll/store'
-import {InitStateType, loadingAC} from './bll/loadingReducer'
+import {loadingAC} from './bll/loadingReducer'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import s2 from '../../s1-main/App.module.css'
 import {Loader} from './Loader'
@@ -14,38 +14,48 @@ import {Loader} from './Loader'
 * */
 
 const HW10 = () => {
-    const dispatch=useDispatch()
-    // useSelector, useDispatch // пишет студент
-    const isLoading = useSelector<AppStoreType,boolean>(state => state.loading.isLoading)
+  // useSelector, useDispatch // пишет студент
+  // const isLoading = false
 
-    const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
-        // dispatch
-        dispatch(loadingAC(!isLoading))
-        // dispatch(loadingAC(isLoading))
-        setTimeout(()=>dispatch(loadingAC(isLoading)),1500)
-    }
+  const loading = useSelector<AppStoreType, { isLoading: boolean }>(state => state.loading)
+  const dispatch = useDispatch()
 
-    return (
-        <div id={'hw10'}>
-            <div className={s2.hwTitle}>Homework #10</div>
+  const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
+    // dispatch
+    dispatch(loadingAC(loading.isLoading))
+    // setTimeout
+    setTimeout(() => {
+      dispatch(loadingAC(!loading.isLoading))
+    }, 1500)
+  }
 
-            <div className={s2.hw}>
-                {isLoading ? (
-                    <div id={'hw10-loading'}>
-                        <Loader/>
-                    </div>
-                ) : (
-                    <SuperButton
-                        style={{width:"10vh"}}
-                        id={'hw10-button-start-loading'}
-                        onClick={setLoading}
-                    >
-                        Set loading...
-                    </SuperButton>
-                )}
+  return (
+    <div id={'hw10'}>
+      <div className={s2.container} style={{paddingTop: "40px"}}>
+        <div className={s2.hwTitle}>Homework №10</div>
+      </div>
+      <hr/>
+      {/*демонстрация возможностей компонент:*/}
+      <div className={s2.container}>
+        <div className={s2.hw}>
+          {loading.isLoading ? (
+            <div id={'hw10-loading'}>
+              <Loader />
             </div>
+          ) : (
+            <SuperButton
+              id={'hw10-button-start-loading'}
+              xType={'default'}
+              onClick={() => setLoading()}
+            >
+              Set loading...
+            </SuperButton>
+          )}
         </div>
-    )
+      </div>
+      <hr/>
+    </div>
+  )
 }
 
 export default HW10

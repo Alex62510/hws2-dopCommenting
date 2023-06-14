@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import Affairs from './affairs/Affairs'
 import s2 from '../../s1-main/App.module.css'
 
-
 /*
 * 1 - описать типы AffairPriorityType, AffairType
 * 2 - указать нужный тип для defaultAffairs
@@ -18,7 +17,7 @@ import s2 from '../../s1-main/App.module.css'
 * */
 
 // types
-export type AffairPriorityType = 'high' | 'low' | 'middle' // need to fix any
+export type AffairPriorityType = 'low' | 'middle' | 'high' // need to fix any
 export type AffairType = {
     _id: number // need to fix any
     name: string // need to fix any
@@ -27,7 +26,7 @@ export type AffairType = {
 export type FilterType = 'all' | AffairPriorityType
 
 // constants
-const defaultAffairs: Array<AffairType> = [ // need to fix any
+export const defaultAffairs: Array<AffairType> = [ // need to fix any
     {_id: 1, name: 'React', priority: 'high'}, // студенты могут изменить содержимое name и количество элементов в массиве, ...priority не менять!
     {_id: 2, name: 'anime', priority: 'low'},
     {_id: 3, name: 'games', priority: 'low'},
@@ -36,27 +35,14 @@ const defaultAffairs: Array<AffairType> = [ // need to fix any
 ]
 
 // pure helper functions
-export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType) => { // need to fix any
-    //если пришел фильтр "all"...может нам вообще не фильтровать, а вернуть все?
-    //а вот если пришло другое значение...
-    let changeAffairs = affairs
-    if (filter === 'high') {
-        changeAffairs = affairs.filter(t => t.priority === 'high')
+export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): Array<AffairType> => { // need to fix any
+    if (filter === 'all') {
+        return affairs;
     }
-    if (filter === 'middle') {
-        changeAffairs = affairs.filter(t => t.priority === 'middle')
-    }
-    if (filter === 'low') {
-        changeAffairs = affairs.filter(t => t.priority === 'low')
-    }
-    return changeAffairs // need to fix
+    return affairs.filter(el => el.priority === filter)  // need to fix
 }
-
 export const deleteAffair = (affairs: Array<AffairType>, _id: number) => { // need to fix any
-    // need to fix
-    // отбрасывай при помощи метода filter лишних affairs
-    affairs = affairs.filter(t => t._id !== _id)
-    return affairs
+    return affairs.filter(el => el._id !== _id)
 }
 
 function HW2() {
@@ -64,23 +50,25 @@ function HW2() {
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
-    const deleteAffairCallback = (_id: number) => {
-        setAffairs(deleteAffair(affairs, _id))
-        // need to fix any
-        // need to fix
-        // это просто функция стрелочник-она засетает, то что сделает deleteAffair
-        // setAffairs(вызываю функцию(передаю аргументы))
+    const deleteAffairCallback = (_id: number) => { // need to fix any
+         setAffairs(deleteAffair(affairs, _id))
     }
+
     return (
         <div id={'hw2'}>
-            <div className={s2.hwTitle}>Homework #2</div>
-            <div className={s2.hw}>
-                <Affairs
-                    data={filteredAffairs}
-                    filter={filter}          // ого useState передаем!
-                    setFilter={setFilter}    // ого useState передаем!
-                    deleteAffairCallback={deleteAffairCallback}
-                />
+            <div className={s2.container}>
+                <div className={s2.hwTitle}>Homework №2</div>
+            </div>
+            <hr/>
+            <div className={s2.container}>
+                <div className={s2.hw}>
+                    <Affairs
+                        data={filteredAffairs}
+                        setFilter={setFilter}
+                        deleteAffairCallback={deleteAffairCallback}
+                        filter={filter}
+                    />
+                </div>
             </div>
         </div>
     )
